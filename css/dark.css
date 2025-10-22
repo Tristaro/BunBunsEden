@@ -1,0 +1,19 @@
+:root {
+    --primary-color: #eee;
+    --accent-color: #66b2ff;
+    --background-color: #111;
+    --card-background: #1a1a1a;
+}
+body {
+  background: black;
+  color: white;
+  font-family: Arial;
+  transition: background 0.3s, color 0.3s;
+}
+button {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}

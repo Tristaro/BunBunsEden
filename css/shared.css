@@ -1,0 +1,136 @@
+/* Carousel */
+.gallery-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 60px 0 20px;
+    background-color: var(--background-color);
+    opacity: 0;
+}
+
+.gallery-section.visible {
+    opacity: 1;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.gallery-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
+.gallery-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+    padding: 20px 0;
+}
+
+.gallery-card {
+    min-width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 15px 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.gallery-card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.4s ease;
+    filter: grayscale(20%);
+}
+
+.gallery-carousel::before,
+.gallery-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gallery-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color), rgba(249, 250, 252, 0));
+}
+
+.gallery-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color), rgba(249, 250, 252, 0));
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-200px * 12));
+    }
+}
+
+.gallery-carousel:hover .gallery-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .gallery-card {
+        min-width: 140px;
+        height: 90px;
+        padding: 10px 15px;
+    }
+    
+    .gallery-card img {
+        max-height: 50px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-160px * 12));
+        }
+    }
+}

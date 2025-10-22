@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bunbun’s Eden</title>
+
+    <!-- Default theme (light) -->
+    <link id="theme-stylesheet" rel="stylesheet" href="/css/style-light.css" />
+
+    <!-- Favicon -->
+    <!-- Standard favicon -->
+    <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
+
+    <!-- PNG favicons for modern browsers -->
+    <link
+      rel="icon"
+      href="/assets/icons/favicon-16x16.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/assets/icons/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+
+    <!-- iOS shortcut icon -->
+    <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+
+    <!-- Android / Chrome -->
+    <link rel="manifest" href="/assets/icons/site.webmanifest" />
+    <link
+      rel="icon"
+      href="/assets/icons/android-chrome-192x192.png"
+      sizes="192x192"
+      type="image/png"
+    />
+    <link
+      rel="icon"
+      href="/assets/icons/android-chrome-512x512.png"
+      sizes="512x512"
+      type="image/png"
+    />
+
+
+
+    <!-- JS -->
+    <script src="/js/themeToggle.js" defer></script>
+    <script src="/js/gamesSlideshow.js" defer></script>
+    <script src="/js/main.js" defer></script>
+
+  </head>
+
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <h1 class="logo"><a href="/">Bunbun’s Eden</a></h1>
+
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/games/">Games</a></li>
+      <!-- Theme toggle switch -->
+        <div class="theme-switch">
+            <label class="switch">
+            <input type="checkbox" id="toggleTheme">
+            <span class="slider"></span>
+            </label>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="hub">
+      <section class="intro">
+        <h2>Welcome to Bunbun’s Eden</h2>
+        <p></p>
+      </section>
+
+      <section class="hub-links">
+        <a href="/portfolio/" class="hub-card">
+          <img src="/assets/images/portfolio-banner.jpg" alt="Portfolio" />
+          <div class="card-content">
+            <h3>Portfolio</h3>
+            <p>Explore my projects.</p>
+          </div>
+        </a>
+
+        <a href="/games/" class="hub-card">
+          <div class="slideshow-container">
+            <img id="games-slideshow" src="/assets/images/games/Minecraft.png" alt="Games" />
+          </div>
+          <div class="card-content">
+            <h3>Games</h3>
+            <p>Check out my Minecraft, Palworld, and other hosted worlds.</p>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Bunbun’s Eden. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

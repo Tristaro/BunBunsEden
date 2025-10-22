@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunBun's Eden</title>
+
+    <link id="themeStylesheet" rel="stylesheet" href="css/light.css">
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+      <h1 class="logo"><a href="#">Bunbun’s Eden</a></h1>
+
+      <!-- Navigation links -->
+      <ul class="nav-links">
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/games/">Games</a></li>
+
+      <!-- Theme toggle switch -->
+        <div class="theme-switch">
+            <label class="switch">
+            <input type="checkbox" id="toggleTheme">
+            <span class="slider"></span>
+            </label>
+        </div>
+      </ul>
+    </nav>
+    </div>
+    
+    <button id="themeToggle">Toggle Theme</button>
+    <!-- your page content -->
+    <script src="js/theme.js">
+        const themeToggle = document.getElementById("themeToggle");
+        const themeLink = document.getElementById("themeStylesheet");
+
+        function setTheme(mode) {
+            if (mode === "dark") {
+                themeLink.href = "css/dark.css";
+                localStorage.setItem("theme", "dark");
+            } else {
+                themeLink.href = "css/light.css";
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = localStorage.getItem("theme") || "light";
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            setTheme(newTheme);
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const savedTheme = localStorage.getItem("theme") || "light";
+            setTheme(savedTheme);
+        });
+    </script>
+    
+
+    <div class="hero"></div>
+
+
+    <div class="carousel">
+        <div class="container">
+            <h2>The Spotlight</h2>
+            <div class="gallery-carousel">
+            <div class="gallery-track" id="galleryTrack">
+                <!-- Images to be Injected -->
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="aboutme"></div>
+    
+    
+    <div class="footer"></div>
+</body>
+</html>
+
